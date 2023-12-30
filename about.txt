@@ -1,0 +1,45 @@
+Code Explanation:
+
+HTML:
+Basic title and boilerplate
+Body:
+Dive for whole game logic id = game.
+Div for stats, xp, health, gold
+Div for actions (buttons you can press to perform logic)
+Div for monster stats, name and health.
+Div for text, initially contains the starting text directly in html doc
+
+CSS:
+Body = black background
+White text box with padding for game div logic. 
+Set the height width etc of game box
+Set border and text on the stats and control buttons
+Set format for monster stats while fighting and hide initially using display: none
+Color and style buttons
+
+JavaScript:
+Set initial stats and values by declaring variables.
+Use the DOM and query selector to create javascript variables for all the html components using css language,
+Create an array of weapons containing objects for each weapon with name and power
+Create an array of monsters containing objects for each monster with name, level and health values
+Create an array of locations with names, text for buttons, functions to run when buttons are clicked and text box values.
+These locations will be used to update the logic whenever anything happens and navigate around the game by updating the game box state. 
+Initialize the buttons to have the initial onclick values. 
+
+Create an update function which accepts a location from the location array as a parameter and resest the game box values to match the logic at that location. 
+Add the store logic where you can buy health and weapons with gold. 
+Add logic for the transactions with safe guards to make sure you have enough gold and don’t have the maximum inventory of weapons already. 
+Add in sell logic for weapons if you already have the max amount. 
+
+Fight monster functions find the monster info from the array and call the goFight function based on that monster index. 
+Go fight updates the game status from the location array. Displays the monster css which is hidden to start the fighting. 
+When fighting have an attack function which updates the text box based on your attack. Attacking reduces your health and also the health of the monster. 
+Check is you hit the monster (randomized odds) before adjusting monster health.
+Adds logic to lose if you die while attacking or if you kill the dragon and win. 
+Adds in a 10% bad luck weapon break and removes item from your weapon inventory if it happens. 
+Adds gold and experience if you kill a monster successfully
+
+Restart resets the game
+Add in a easter egg for a hidden guessing game. Triggered if you choose the right go to town button after killing a monster. 
+Game is pick a number 2 or 8, it generates a random array of 10 numbers to compare to using a while loop 
+Uses a for loop to print these numbers out and tell you  if you won or lost. Either adds gold or takes health depending on the outcome. 
